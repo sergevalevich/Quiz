@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "599067274795",
+    "firebase_url": "https://quiz-afc99.firebaseio.com",
+    "project_id": "quiz-afc99",
+    "storage_bucket": "quiz-afc99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599067274795:android:d9ec795ed1218dde",
+        "android_client_info": {
+          "package_name": "com.valevich.quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599067274795-d9ee2h0eul07q0foc1cgojhqgnmfvgin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsXQmPBFbnikzx4FbdWE2YTDlGOygq-ps"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

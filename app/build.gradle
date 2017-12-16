@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion versions.compileSdkVersion
+    buildToolsVersion versions.buildToolsVersion
+
+    defaultConfig {
+        applicationId versions.appId
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    flavorDimensions "type"
+
+    productFlavors {
+
+        development {
+            minSdkVersion versions.minSdkVersionDev
+        }
+
+    }
+
+    splits {
+        abi {
+            enable true
+        }
+        density {
+            enable true
+        }
+    }
+
+    if (project.hasProperty('devBuild')) {
+        splits.abi.enable = false
+        splits.density.enable = false
+        aaptOptions.cruncherEnabled = false
+    }
+
+    kapt {
+        generateStubs = true
+        correctErrorTypes = true
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    defaultConfig {
+        // ...
+        resConfigs "auto"
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation(libs.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation libs.support_appcompat_v7
+    implementation libs.support_v4
+    implementation libs.support_v13
+    implementation libs.support_annotations
+    implementation libs.recyclerView
+    implementation libs.support_design
+
+    implementation libs.dagger_android
+    implementation libs.dagger_android_support
+    annotationProcessor libs.annotationProcessor
+    kapt libs.kapt
+
+    implementation libs.constraintLayout
+    implementation libs.kotlin
+
+    implementation libs.rxKotlin
+    implementation libs.rxAndroid
+
+    implementation libs.rxBindings
+    implementation libs.rxRecyclerView
+
+    implementation libs.timber
+
+    implementation libs.glide
+    annotationProcessor libs.glide_apt
+
+    implementation libs.moxy
+    kapt libs.moxy_compiler
+    implementation libs.moxy_support
+
+    implementation libs.retrofit
+    implementation libs.retrofit_adapter
+
+    implementation libs.code_view
+    implementation libs.firebase_core
+    implementation libs.firebase_db
+    implementation libs.firebase_auth
+
+
+    implementation 'com.google.android.gms:play-services-auth:11.6.2'
+    implementation 'de.hdodenhof:circleimageview:2.0.0'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-analytics:11.6.2'
+    implementation 'com.google.firebase:firebase-storage:11.6.2'
+    implementation 'com.google.firebase:firebase-auth:11.6.2'
+    implementation 'com.google.firebase:firebase-config:11.6.2'
+    implementation 'com.google.android.gms:play-services-appinvite:11.6.2'
+    implementation 'com.google.firebase:firebase-messaging:11.6.2'
+    implementation 'com.google.android.gms:play-services-ads:11.6.2'
+    implementation 'com.google.firebase:firebase-crash:11.6.2'
+    implementation 'com.google.firebase:firebase-appindexing:11.6.2'
+
+    // Firebase UI
+    implementation 'com.firebaseui:firebase-ui-database:3.0.0'
+    implementation 'com.firebaseui:firebase-ui-auth:3.0.0'
+    implementation 'com.firebaseui:firebase-ui-storage:3.0.0'
+    implementation 'com.caverock:androidsvg:1.2.2-beta-1'
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+
+
+    testImplementation libs.junit
+    testImplementation libs.spek
+    testImplementation libs.spek_junit_engine
+    testImplementation libs.junitRunner
+    testImplementation libs.jupiterApi
+    testImplementation libs.mockito_kotlin
+}
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'com.google.gms.google-services'
