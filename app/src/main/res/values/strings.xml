@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Quiz</string>
+    <string name="app_name">DiaPro</string>
     <string name="categories_title">Категории</string>
     <string name="results_title">Результаты</string>
     <string name="questions_title">Quiz</string>
@@ -15,4 +15,25 @@
     <string name="fresh_config">Fresh Config</string>
     <string name="cause_crash">Cause Crash</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="sugar_metrics">mmol/l</string>
+    <string name="retry">Retry</string>
+    <string name="nav_drawer_notes">Дневник</string>
+    <string name="nav_drawer_statistics">Статистика</string>
+    <string name="nav_drawer_exit">Выход</string>
+    <string name="notes">Дневник</string>
+    <string name="stats">Статистика</string>
+    <string name="navigation_drawer_open" translatable="false">Open Navigation</string>
+    <string name="navigation_drawer_close" translatable="false">Close Navigation</string>
+    <string name="selected_action_remove">Удалить</string>
+    <string name="search_action">Поиск</string>
+    <string name="order_default">Хронология</string>
+    <string name="sugar_level_hint">Уровень сахара</string>
+    <string name="short_hint">Короткий инсулин(ед.)</string>
+    <string name="long_hint">Продлённый инсулин(ед.)</string>
+    <string name="xe_hint">Углеводы(ХЕ)</string>
+    <string name="temp_hint">Температура</string>
+    <string name="tags_picker">Тэги</string>
+    <string name="save">Сохранить</string>
+    <string name="new_item">Новая запись</string>
+    <string name="tags_screen_title">Тэги</string>
 </resources>

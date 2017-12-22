@@ -75,8 +75,7 @@ android {
 }
 
 dependencies {
-
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation(libs.espresso, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -86,42 +85,30 @@ dependencies {
     implementation libs.support_annotations
     implementation libs.recyclerView
     implementation libs.support_design
-
     implementation libs.dagger_android
     implementation libs.dagger_android_support
     annotationProcessor libs.annotationProcessor
     kapt libs.kapt
-
     implementation libs.constraintLayout
     implementation libs.kotlin
-
     implementation libs.rxKotlin
     implementation libs.rxAndroid
-
     implementation libs.rxBindings
     implementation libs.rxRecyclerView
-
     implementation libs.timber
-
     implementation libs.glide
     annotationProcessor libs.glide_apt
-
     implementation libs.moxy
     kapt libs.moxy_compiler
     implementation libs.moxy_support
-
     implementation libs.retrofit
     implementation libs.retrofit_adapter
-
     implementation libs.code_view
     implementation libs.firebase_core
     implementation libs.firebase_db
     implementation libs.firebase_auth
-
-
     implementation 'com.google.android.gms:play-services-auth:11.6.2'
     implementation 'de.hdodenhof:circleimageview:2.0.0'
-
     // Firebase
     implementation 'com.google.firebase:firebase-analytics:11.6.2'
     implementation 'com.google.firebase:firebase-storage:11.6.2'
@@ -132,7 +119,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads:11.6.2'
     implementation 'com.google.firebase:firebase-crash:11.6.2'
     implementation 'com.google.firebase:firebase-appindexing:11.6.2'
-
     // Firebase UI
     implementation 'com.firebaseui:firebase-ui-database:3.0.0'
     implementation 'com.firebaseui:firebase-ui-auth:3.0.0'
@@ -140,14 +126,17 @@ dependencies {
     implementation 'com.caverock:androidsvg:1.2.2-beta-1'
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
-
-
+    implementation 'com.github.Plumillon:ChipView:1.2.0'
+    implementation 'com.afollestad.material-dialogs:core:0.8.6.1'
     testImplementation libs.junit
     testImplementation libs.spek
     testImplementation libs.spek_junit_engine
     testImplementation libs.junitRunner
     testImplementation libs.jupiterApi
     testImplementation libs.mockito_kotlin
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation project(':wekaSTRIPPED')
+    implementation 'com.github.frangsierra:rx2firebase:1.1.3'
 }
 repositories {
     mavenCentral()

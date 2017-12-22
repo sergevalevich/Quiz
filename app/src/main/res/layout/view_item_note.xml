@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="2dp"
+    app:cardMaxElevation="8dp"
+    app:cardCornerRadius="4dp"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardUseCompatPadding="true"
+    app:cardPreventCornerOverlap="false"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:id="@+id/noteCard">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/sugarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha=".54"
+            android:fontFamily="@font/roboto_default"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="96sp"
+            android:includeFontPadding="false"
+            android:maxLength="4"
+            tools:text="5.5"/>
+
+        <TextView
+            android:id="@+id/sugarViewMetric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:alpha=".54"
+            android:fontFamily="@font/roboto_default"
+            android:gravity="center"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/sugarView"
+            android:text="@string/sugar_metrics"/>
+
+        <TextView
+            android:id="@+id/sugarChangeView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:alpha=".54"
+            android:fontFamily="@font/roboto_default"
+            android:gravity="center"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/sugarView"
+            app:layout_constraintStart_toEndOf="@+id/sugarView"
+            tools:text="1.5 (2.5 norm)"/>
+
+        <ImageView
+            android:id="@+id/sugarChangeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/arrow_up_bold"
+            android:tint="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@+id/sugarChangeView"
+            app:layout_constraintStart_toEndOf="@+id/sugarChangeView"
+            app:layout_constraintTop_toTopOf="@+id/sugarChangeView"
+            app:layout_constraintVertical_bias="1.0"/>
+
+        <ImageView
+            android:id="@+id/moodIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:tint="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@+id/sugarChangeIcon"
+            app:layout_constraintStart_toEndOf="@+id/sugarChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/sugarChangeIcon"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/emoticon_happy"/>
+
+        <TextView
+            android:id="@+id/dateView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/roboto_default"
+            android:gravity="center_vertical"
+            app:layout_constraintBaseline_toBaselineOf="@+id/bodyTempView"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="25.04.17 / 12:30 "/>
+
+        <ImageView
+            android:id="@+id/needle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/needle"
+            android:tint="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sugarView"/>
+
+        <TextView
+            android:id="@+id/units"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/roboto_default"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/needle"
+            app:layout_constraintTop_toBottomOf="@+id/sugarView"
+            tools:text="5/12"/>
+
+        <ImageView
+            android:id="@+id/foodIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/food_apple"
+            android:tint="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/needle"/>
+
+        <TextView
+            android:id="@+id/foodView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_default"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/foodIcon"
+            app:layout_constraintTop_toBottomOf="@+id/units"
+            tools:text="16 XE"/>
+
+        <ImageView
+            android:id="@+id/bodyTempIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:tint="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodIcon"
+            app:srcCompat="@drawable/thermometer"/>
+
+        <TextView
+            android:id="@+id/bodyTempView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_default"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/bodyTempIcon"
+            app:layout_constraintTop_toBottomOf="@+id/foodView"
+            tools:text="36.6"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateView">
+
+        </View>
+
+        <ImageView
+            android:id="@+id/dropDown"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:tint="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            android:rotation="180"
+            app:srcCompat="@drawable/menu_down"/>
+
+        <com.plumillonforge.android.chipview.ChipView
+            android:id="@+id/chipview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:chip_background="@color/colorChip"
+            app:layout_constraintTop_toBottomOf="@+id/dropDown"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</android.support.v7.widget.CardView>

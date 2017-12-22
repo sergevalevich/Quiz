@@ -10,10 +10,13 @@
     <color name="colorSecondary">#c2185b</color>
     <color name="colorSecondaryLight">#fa5788</color>
     <color name="colorSecondaryDark">#8c0032</color>
-    <color name="textColorPrimary">#ffffff</color>
-    <color name="textColorSecondary">#ffffff</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="textColorSecondary">#000000</color>
     <color name="categoriesFooter">#B3000000</color>
     <color name="colorAccent">@color/colorSecondary</color>
-    <color name="colorBg">#ffffff</color>
+    <color name="colorBg">#fafafa</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorDivider">#e0e0e0</color>
+    <color name="colorChip">#e0e0e0</color>
 
 </resources>

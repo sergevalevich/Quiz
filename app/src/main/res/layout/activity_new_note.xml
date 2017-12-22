@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/rootNew"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBg"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/newNoteAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/newNoteToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/addNoteContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:scrollbars="none"
+        android:layout_below="@+id/newNoteAppBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="8dp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/sugarLevelLabel"
+                    style="@style/EditText"
+                    android:hint="@string/sugar_level_hint"
+                    android:inputType="number|numberDecimal"
+                    android:maxLength="4">
+
+                    <requestFocus/>
+
+                </android.support.v7.widget.AppCompatEditText>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="8dp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/shortInsulinLabel"
+                    style="@style/EditText"
+                    android:hint="@string/short_hint"
+                    android:inputType="number|numberDecimal"
+                    android:drawableStart="@drawable/needle"
+                    android:drawablePadding="8dp"
+                    android:maxLength="4">
+
+                </android.support.v7.widget.AppCompatEditText>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="8dp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/longInsulinLabel"
+                    style="@style/EditText"
+                    android:hint="@string/long_hint"
+                    android:drawableStart="@drawable/needle"
+                    android:inputType="number|numberDecimal"
+                    android:drawablePadding="8dp"
+                    android:maxLength="4">
+
+                </android.support.v7.widget.AppCompatEditText>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="8dp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/xeLabel"
+                    style="@style/EditText"
+                    android:hint="@string/xe_hint"
+                    android:inputType="number|numberDecimal"
+                    android:drawableStart="@drawable/food_apple"
+                    android:drawablePadding="8dp"
+                    android:maxLength="4">
+
+                </android.support.v7.widget.AppCompatEditText>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="8dp"
+                android:theme="@style/TextLabel">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/tempLabel"
+                    style="@style/EditText"
+                    android:hint="@string/temp_hint"
+                    android:inputType="number|numberDecimal"
+                    android:drawableStart="@drawable/thermometer"
+                    android:drawablePadding="8dp"
+                    android:maxLength="4">
+
+                </android.support.v7.widget.AppCompatEditText>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tagsPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/roboto_default"
+                android:textColor="@color/textColorPrimary"
+                android:drawableStart="@drawable/label_outline"
+                android:text="@string/tags_picker"
+                android:layout_marginBottom="8dp">
+            </TextView>
+
+            <com.plumillonforge.android.chipview.ChipView
+                android:id="@+id/newNoteChipview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:chip_background="@color/colorChip"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/moodPicker"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp">
+            </android.support.v7.widget.AppCompatSpinner>
+
+            <Button
+                android:id="@+id/saveButton"
+                style="@style/ButtonStyle"
+                android:layout_gravity="end"
+                android:text="@string/save"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/newNoteProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"/>
+
+
+</RelativeLayout>
